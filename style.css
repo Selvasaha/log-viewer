@@ -1,0 +1,236 @@
+:root {
+  --bg: #0c0c0c;
+  --fg: #f0f0f0;
+  --accent: #ffffff;
+  --info: #00ffff;
+  --warn: #ffb300;
+  --error: #ff4d4d;
+  --debug: #a0a0a0;
+  --highlight: #1a1a1a;
+  --toggle-off: #333;
+}
+
+[data-theme="light"] {
+  --bg: #f5f7fa;              /* Soft gray-blue background */
+  --fg: #1f2933;              /* Rich dark text */
+  --accent: #374151;          /* Slate for accents */
+
+  --info: #2563eb;            /* Blue-600 (cool, techy info) */
+  --warn: #f59e0b;            /* Amber-500 (warn, warm tone) */
+  --error: #ef4444;           /* Red-500 (alert but not retina-burning) */
+  --debug: #6b7280;           /* Gray-500 (low-key debug) */
+
+  --highlight: #e5e7eb;       /* Light gray for row zebra effect */
+  --toggle-off: #cbd5e1;      /* Muted slate-gray buttons */
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Segoe UI', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 999;
+  border-bottom: 1px solid #444;
+  padding: 16px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* New wrapper for top row in header */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.donut-container {
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+button, .toggle-btn {
+  background: var(--toggle-off);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.toggle-btn[data-type="all"].active {
+  background: var(--accent);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--accent);
+}
+.toggle-btn[data-type="info"].active {
+  background: var(--info);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--info);
+}
+.toggle-btn[data-type="warn"].active {
+  background: var(--warn);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--warn);
+}
+.toggle-btn[data-type="error"].active {
+  background: var(--error);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--error);
+}
+.toggle-btn[data-type="debug"].active {
+  background: var(--debug);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--debug);
+}
+.toggle-btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+input[type="file"], input[type="text"] {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: var(--highlight);
+  color: var(--fg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #333;
+}
+
+tr:nth-child(even) {
+  background-color: var(--highlight);
+}
+td.log-cell {
+  white-space: pre; /* default: no wrap */
+  word-break: break-word;
+}
+
+td.log-cell.wrapped {
+  white-space: pre-wrap; /* allow wrap */
+}
+
+
+.info { color: var(--info); }
+.warn { color: var(--warn); }
+.error { color: var(--error); }
+.debug { color: var(--debug); }
+.timestamp {
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 6px;
+  font-family: monospace;
+}
+
+.donut-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  gap: 6px;
+}
+
+.donut-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.donut-center {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--fg);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+#clearBtn {
+  background-color: #e11d48;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.file-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--highlight);
+}
+
+.tab {
+  padding: 4px 10px;
+  background: var(--highlight);
+  color: var(--fg);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  user-select: none;
+  border: 1px solid var(--fg);
+}
+
+.tab.active {
+  background: var(--fg);
+  color: var(--bg);
+  font-weight: bold;
+  box-shadow: 0 0 4px var(--fg);
+}
