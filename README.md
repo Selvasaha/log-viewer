@@ -64,7 +64,7 @@ Easily visualize logs, switch between files with tabs, and analyze issues in sec
 
 > Download this if you want to demo the viewer immediately.
 
-- [📄 example-log.txt](example-log.txt)
+<a href="example-log.txt" download>📄 Download example-log.txt</a>
 
 Contains a big juicy mix of `INFO`, `WARN`, `ERROR`, and `DEBUG` lines, timestamps, and realistic system logs.
 
