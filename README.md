@@ -40,5 +40,22 @@ Donut chart updates live based on what's filtered and visible. Everything runs i
 
 _(Add your screenshot file in the repo)_
 
-## 📂 Folder Structure
+
+
+## 🚧 Dev Tips
+
+- Use modern browsers for best SVG + Chart.js support
+- SVG favicon may need correct MIME type when served locally
+- Run via local server if needed: `npx serve .` or open directly
+
+## 🧙 Author
+
+Made with 💻 and ⚡ by [YourName](https://github.com/your-username)
+
+## 🪪 License
+
+MIT — free to fork, modify, remix.
+
+---
+
 
