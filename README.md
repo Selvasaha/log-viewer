@@ -46,7 +46,7 @@ Easily visualize logs, switch between files with tabs, and analyze issues in sec
 
 ## 🌩️ Live Preview
 
-> 🔗 <a href="https://selvasaha.github.io/log-viewer" target="_blank" rel="noopener noreferrer">Try it Now</a>
+<p><a href="https://selvasaha.github.io/log-viewer" target="_blank" rel="noopener noreferrer">🔗 Try it Now (opens in new tab)</a></p>
 
 > Works offline after first load. Drop `.txt` logs and analyze on the go!
 
