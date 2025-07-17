@@ -54,8 +54,6 @@ Easily visualize logs, switch between files with tabs, and analyze issues in sec
 
 ## 📸 Screenshot
 
-> *(Include a real screenshot of your app here for maximum GitHub vibes)*
-
 ![Dev Log Viewer Screenshot](screenshot.png)
 
 ---
