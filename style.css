@@ -41,16 +41,19 @@ body {
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   background: var(--bg);
   z-index: 999;
-  border-bottom: 1px solid #444;
   padding: 16px 10px 10px 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-bottom: 1px solid #444;
 }
+
 
 /* New wrapper for top row in header */
 .header-top {
@@ -150,6 +153,11 @@ td.log-cell.wrapped {
   white-space: pre-wrap; /* allow wrap */
 }
 
+thead {
+  position: sticky;
+  background: var(--bg);
+  z-index: 998;
+}
 
 .info { color: var(--info); }
 .warn { color: var(--warn); }
