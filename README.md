@@ -68,6 +68,11 @@ Contains a big juicy mix of `INFO`, `WARN`, `ERROR`, and `DEBUG` lines, timestam
 
 ---
 
+![MIT License](https://img.shields.io/badge/license-MIT-blue)
+![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
+![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/dev-log-viewer?style=social)
+
+
 ## 🛠 Dev Tips
 
 - Works best on **modern browsers** (Chrome, Firefox, Edge)
