@@ -254,5 +254,22 @@ function toggleWrap() {
   const data = filesMap[currentFileId];
   if (data) renderLogs(data.content);
 }
+window.addEventListener('load', () => {
+  const header = document.querySelector('header');
+  const thead = document.querySelector('thead');
+  
+  const updateOffsets = () => {
+    const headerHeight = header.offsetHeight;
+    document.body.style.paddingTop = `${headerHeight}px`;
+    thead.style.top = `${headerHeight}px`;
+  };
+
+  updateOffsets();
+
+  // Just in case the header height changes later (tabs/donut appears)
+  const observer = new MutationObserver(updateOffsets);
+  observer.observe(header, { childList: true, subtree: true, attributes: true });
+});
+
 
 
