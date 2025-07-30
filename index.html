@@ -8,10 +8,13 @@
   <link rel="icon" href="thunder.ico" type="image/x-icon">
 </head>
 <body data-theme="dark">
+
   <header>
     <div class="header-top">
       <div class="header-left">
-        <input type="file" id="fileInput" accept=".txt" multiple />
+
+        <input type="file" id="fileInput" accept=".txt" multiple hidden />
+        <button onclick="fileInput.click()">📁 Import Logs</button>
         <button id="clearBtn" style="display: none;">❌ Clear</button>
         <button onclick="goToHead()">⬆ Head</button>
         <button onclick="goToTail()">⬇ Tail</button>
@@ -19,12 +22,8 @@
         <button onclick="toggleWrap()" id="wrapToggleBtn">🧻 Wrap</button>
         <input type="text" id="searchInput" placeholder="Search logs..." />
 
-        <button class="toggle-btn active" data-type="all" id="btn-all">All</button>
-        <button class="toggle-btn active" data-type="info" id="btn-info">Info</button>
-        <button class="toggle-btn active" data-type="warn" id="btn-warn">Warn</button>
-        <button class="toggle-btn active" data-type="error" id="btn-error">Error</button>
-        <button class="toggle-btn active" data-type="debug" id="btn-debug">Debug</button>
       </div>
+
       <div id="donutSection" style="display: none;">
         <div class="donut-wrapper">
           <div class="donut-legend" id="logLegend"></div>
@@ -34,7 +33,9 @@
           </div>
         </div>
       </div>
+
     </div>
+
     <div id="fileTabs" class="file-tabs"></div>
   </header>
 
@@ -44,7 +45,7 @@
     </thead>
     <tbody id="logTable"></tbody>
   </table>
-
   <script src="app.js"></script>
+
 </body>
 </html>
