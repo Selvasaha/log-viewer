@@ -1,3 +1,4 @@
+/* #region ROOT THEMES */
 :root {
   --bg: #0c0c0c;
   --fg: #f0f0f0;
@@ -11,19 +12,19 @@
 }
 
 [data-theme="light"] {
-  --bg: #f5f7fa;              /* Soft gray-blue background */
-  --fg: #1f2933;              /* Rich dark text */
-  --accent: #374151;          /* Slate for accents */
-
-  --info: #2563eb;            /* Blue-600 (cool, techy info) */
-  --warn: #f59e0b;            /* Amber-500 (warn, warm tone) */
-  --error: #ef4444;           /* Red-500 (alert but not retina-burning) */
-  --debug: #6b7280;           /* Gray-500 (low-key debug) */
-
-  --highlight: #e5e7eb;       /* Light gray for row zebra effect */
-  --toggle-off: #cbd5e1;      /* Muted slate-gray buttons */
+  --bg: #f5f7fa;
+  --fg: #1f2933;
+  --accent: #374151;
+  --info: #2563eb;
+  --warn: #f59e0b;
+  --error: #ef4444;
+  --debug: #6b7280;
+  --highlight: #e5e7eb;
+  --toggle-off: #cbd5e1;
 }
+/* #endregion */
 
+/* #region BASE ELEMENTS */
 * {
   transition: all 0.3s ease;
 }
@@ -39,7 +40,9 @@ body {
   margin: 0;
   padding: 0;
 }
+/* #endregion */
 
+/* #region HEADER + TOOLBAR */
 header {
   position: fixed;
   top: 0;
@@ -54,8 +57,6 @@ header {
   border-bottom: 1px solid #444;
 }
 
-
-/* New wrapper for top row in header */
 .header-top {
   display: flex;
   justify-content: space-between;
@@ -70,13 +71,9 @@ header {
   gap: 10px;
   align-items: center;
 }
+/* #endregion */
 
-.donut-container {
-  width: 120px;
-  height: 120px;
-  position: relative;
-}
-
+/* #region BUTTONS + TOGGLES */
 button, .toggle-btn {
   background: var(--toggle-off);
   border: none;
@@ -87,41 +84,61 @@ button, .toggle-btn {
   font-size: 13px;
 }
 
-.toggle-btn[data-type="all"].active {
+.toggle-btn.active[data-type="all"] {
   background: var(--accent);
   color: #000;
   font-weight: bold;
   box-shadow: 0 0 10px var(--accent);
 }
-.toggle-btn[data-type="info"].active {
+.toggle-btn.active[data-type="info"] {
   background: var(--info);
   color: #000;
   font-weight: bold;
   box-shadow: 0 0 10px var(--info);
 }
-.toggle-btn[data-type="warn"].active {
+.toggle-btn.active[data-type="warn"] {
   background: var(--warn);
   color: #000;
   font-weight: bold;
   box-shadow: 0 0 10px var(--warn);
 }
-.toggle-btn[data-type="error"].active {
+.toggle-btn.active[data-type="error"] {
   background: var(--error);
   color: #000;
   font-weight: bold;
   box-shadow: 0 0 10px var(--error);
 }
-.toggle-btn[data-type="debug"].active {
+.toggle-btn.active[data-type="debug"] {
   background: var(--debug);
   color: #000;
   font-weight: bold;
   box-shadow: 0 0 10px var(--debug);
 }
+
+
 .toggle-btn:hover {
   filter: brightness(1.1);
   transform: scale(1.03);
 }
 
+#clearBtn {
+  background-color: #e11d48;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.log-btns-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+/* #endregion */
+
+/* #region INPUTS */
 input[type="file"], input[type="text"] {
   padding: 6px;
   border-radius: 4px;
@@ -129,7 +146,9 @@ input[type="file"], input[type="text"] {
   background: var(--highlight);
   color: var(--fg);
 }
+/* #endregion */
 
+/* #region TABLE + LOG STYLING */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -144,13 +163,14 @@ th, td {
 tr:nth-child(even) {
   background-color: var(--highlight);
 }
+
 td.log-cell {
-  white-space: pre; /* default: no wrap */
+  white-space: pre;
   word-break: break-word;
 }
 
 td.log-cell.wrapped {
-  white-space: pre-wrap; /* allow wrap */
+  white-space: pre-wrap;
 }
 
 thead {
@@ -158,11 +178,14 @@ thead {
   background: var(--bg);
   z-index: 998;
 }
+/* #endregion */
 
+/* #region LOG COLORS + TIMESTAMP */
 .info { color: var(--info); }
 .warn { color: var(--warn); }
 .error { color: var(--error); }
 .debug { color: var(--debug); }
+
 .timestamp {
   color: var(--accent);
   font-weight: bold;
@@ -170,6 +193,13 @@ thead {
   font-family: monospace;
 }
 
+.legend-item.striked span:last-child {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+/* #endregion */
+
+/* #region DONUT CHART */
 .donut-wrapper {
   display: flex;
   align-items: center;
@@ -187,6 +217,7 @@ thead {
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 
 .legend-color {
@@ -194,6 +225,12 @@ thead {
   height: 12px;
   border-radius: 50%;
   display: inline-block;
+}
+
+.donut-container {
+  width: 120px;
+  height: 120px;
+  position: relative;
 }
 
 .donut-center {
@@ -206,16 +243,9 @@ thead {
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
+/* #endregion */
 
-#clearBtn {
-  background-color: #e11d48;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  font-size: 13px;
-  border-radius: 4px;
-  cursor: pointer;
-}
+/* #region TABS */
 .file-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -242,3 +272,4 @@ thead {
   font-weight: bold;
   box-shadow: 0 0 4px var(--fg);
 }
+/* #endregion */
