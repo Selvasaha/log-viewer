@@ -1,80 +1,77 @@
 # ⚡ Dev Log Viewer
 
-**A sleek, fully offline, multi-log file inspector built with pure HTML, SCSS, and JavaScript — zero dependencies, maximum magic.**  
-Easily visualize logs, switch between files with tabs, and analyze issues in seconds using built-in filters, themes, charts, and smart scroll.
+**A sleek, fully offline, multi-log file inspector built using plain HTML, CSS, and JavaScript — zero dependencies, maximum clarity.**  
+View multiple log files, filter by level, search instantly, and explore clean visual summaries using a donut chart.
 
 ---
 
-## 🧩 Features that Hit Hard
+## 🧩 Core Features
 
 | Feature | Description |
 |--------|-------------|
-| 📁 **Multi File Upload** | Drag or select multiple `.txt` logs in one go |
-| 🧙‍♂️ **Tab Navigation** | Instantly switch between uploaded files using dynamic tab UI |
-| 🍩 **Log Donut Chart** | Live donut chart (Chart.js) shows log level breakdown |
-| 🧠 **Keyword Filtering** | Filter by `INFO`, `WARN`, `ERROR`, `DEBUG` — toggle buttons |
-| 🔍 **Instant Search** | Type anything, search results filter in real-time |
-| 🧻 **Wrap Toggle** | Toggle between single-line view and wrapped log lines |
-| ⏱️ **Timestamp Highlighting** | Timestamps are auto-highlighted for better scanability |
-| 🌗 **Theme Toggle** | Light/Dark theme switcher using CSS custom properties |
-| ⬆⬇ **Scroll Shortcuts** | Jump to top/bottom with smooth animations |
-| ❌ **One-Click Clear** | Clear all uploaded files and reset view instantly |
+| 📁 **Multi File Upload** | Drag/drop or select multiple `.txt` log files |
+| 🧙‍♂️ **Dynamic Tabs** | Instantly switch between logs via generated tab interface |
+| 🍩 **Log Donut Chart** | Chart.js-powered donut shows log level distribution |
+| 🎯 **Filter Buttons** | Toggle filters for `INFO`, `WARN`, `ERROR`, `DEBUG` |
+| 🔍 **Live Search** | Search and highlight matching log lines in real-time |
+| 🧻 **Wrap Toggle** | Toggle wrap for long lines or multiline logs |
+| ⏱️ **Timestamp Detection** | Timestamps automatically highlighted and styled |
+| 🌗 **Theme Toggle** | Switch between light/dark using custom CSS variables |
+| ⬆⬇ **Scroll Jumpers** | Smooth scroll to head or tail of logs |
+| ❌ **Clear Logs** | One-click reset to remove all files and chart
 
 ---
 
-## 💡 Techniques & Design Principles
+## 🛠 Implementation Highlights
 
-- **Smart Layouts** using `flex` and media queries for responsive header, charts, and tab bar
-- **Sticky Header** with dual-axis positioning to ensure top visibility on both vertical & horizontal scroll
-- **Dynamic DOM Rendering**: tabs, chart, and logs are rendered/updated purely via JS
-- **Semantic HTML** + ARIA-aware accessibility features
-- **CSS Variables (`var(--*)`)** for consistent theming and instant light/dark switch
-- **Event-Driven UI**: Listeners for file input, search, scroll, filter toggles, etc.
-- **Local-Only**: No uploads or tracking — all files stay in your browser memory
-- **Chart.js Integration**: Clean, colorful donut chart to visualize log levels
+- **Vanilla JavaScript (ES6+)** — no frameworks, no build tools
+- **Chart.js (Doughnut Chart)** for visualizing log levels
+- **Dynamic DOM Rendering** — tabs, logs, filters, and chart are fully JS-controlled
+- **State-Synced Filters** — toggle buttons and legend stay in sync
+- **Semantic HTML + Custom CSS Variables** — themed and responsive
+- **Fully Offline** — all logs are read locally via FileReader, no network used
 
 ---
 
-## 🎯 Tech Stack
-
-- ✅ **Vanilla JavaScript** (ES6+)
-- ✅ **SCSS / CSS** (no frameworks)
-- ✅ **Chart.js** for live donut visualizations
-- ✅ **No Bundlers, No Build Steps** — just open in browser and go
-
----
-
-## 🌩️ Live Preview
-
-> **🔗 Try it Now:** [https://selvasaha.github.io/log-viewer](https://selvasaha.github.io/log-viewer)
-
-> Works offline after first load. Drop `.txt` logs and analyze on the go!
-
----
-
-## 📸 Screenshot
+## 🖼 Screenshot
 
 ![Dev Log Viewer Screenshot](screenshot.png)
 
 ---
 
-## 🔥 Sample Log File
+## 🔍 Try It Live
 
-> Download this if you want to demo the viewer immediately.
+> **🔗 View App:** [https://selvasaha.github.io/log-viewer](https://selvasaha.github.io/log-viewer)
 
-<a href="example-log.txt" download>📄 Download example-log.txt</a>
+> Open the page, drop any `.txt` log files, and explore.
 
-Contains a big juicy mix of `INFO`, `WARN`, `ERROR`, and `DEBUG` lines, timestamps, and realistic system logs.
+---
+
+## 🧪 Sample Log File
+
+Need a test log?  
+<a href="example-log.txt" download>📄 Download example-log.txt</a>  
+Includes a mix of `INFO`, `WARN`, `ERROR`, and `DEBUG` entries with timestamps.
+
+---
+
+## 📚 Tech Stack
+
+- ✅ HTML5 + CSS3 (custom properties for theming)
+- ✅ Vanilla JavaScript
+- ✅ Chart.js (via CDN)
+- ❌ No SCSS, no frameworks, no build tools
+
+---
+
+## 🪛 Developer Tips
+
+- Use `npx serve .` or a local server for full experience (favicon, chart)
+- Works best in Chrome/Edge/Firefox
+- View source to see clearly structured regions:
+  - `#region State`, `#region Filters`, `#region Chart`, etc.
 
 ---
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
-
-
-## 🛠 Dev Tips
-
-- Works best on **modern browsers** (Chrome, Firefox, Edge)
-- SVG favicon might not show properly if opened via `file://` — prefer local server:
-  ```bash
-  npx serve .
